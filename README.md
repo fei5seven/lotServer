@@ -52,7 +52,7 @@ wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVice
 
 
 
-## 小内存机器（小于1G）建议设置(free memory低于120M时自动清理内存，比较安全不容易死机）
+## 小内存机器（小于1G）建议设置(示例：free memory低于120M时自动清理内存，相对dorp cache比较安全不容易死机）
 #### (推荐)
 
 ```
