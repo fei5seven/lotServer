@@ -64,6 +64,7 @@ reboot
 #### （不推荐，因为感觉似乎不怎么有用）
 ```
 echo 120000 > /proc/sys/vm/min_free_kbytes
+reboot
 ```
 
 
