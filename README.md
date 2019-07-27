@@ -8,8 +8,6 @@
 bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/raw/master/Debian_Kernel.sh)
 ```
 
-
-
 ## 用户安装
 ### 常规自动安装（推荐，自动检测内核）
 ```
@@ -54,15 +52,21 @@ wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVice
 
 
 
-## 小内存机器（小于1G）建议设置(free memory低于120M时自动清理内存，比较安全）
-```
-echo 120000 > /proc/sys/vm/min_free_kbytes
-```
-或者
+## 小内存机器（小于1G）建议设置(free memory低于120M时自动清理内存，比较安全不容易死机）
+#### (推荐)
+
 ```
 sysctl -w vm.min_free_kbytes=120000
 sysctl -p
+reboot
 ```
+或者
+#### （不推荐，因为感觉似乎不怎么有用）
+```
+echo 120000 > /proc/sys/vm/min_free_kbytes
+```
+
+
 
 
 
