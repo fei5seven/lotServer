@@ -9,14 +9,14 @@
 
 
 ## 更换内核相关
-- Debian/Unbuntu 自动更换内核 (必须，运行后需重启)
+### Debian/Unbuntu 自动更换内核 (必须，运行后需重启)
 ```
 bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/raw/master/Debian_Kernel.sh)
 ```
 
 
 
-## CentOS用户如遇内核不能匹配, 请参照以下示例
+### CentOS用户如遇内核不能匹配, 请参照以下示例
 - 使用锐速安装脚本,得知不能匹配到内核.
 - 通过 uname -r 查看到的版本号为 2.6.32-642.el6.x86_64 ,
 - 去查看锐速版本库发现有个内核版本很接近 2.6.32-573.1.1.el6.x86_64 .
