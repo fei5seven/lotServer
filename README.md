@@ -1,4 +1,4 @@
-# lotServer
+# frok自萌爪（moeclub）大佬的lotServer
 ### 支持系统看log文件
 
 
