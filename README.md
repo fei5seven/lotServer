@@ -1,15 +1,14 @@
 # frok自萌咖（moeclub）大佬的lotServer
 ### 支持系统看log文件
 
- * [Debian/Unbuntu 自动更换内核](#Debian/Unbuntu 自动更换内核)
-  * [CentOS更换内核失败指引](#CentOS用户如遇内核不能匹配, 请参照以下示例)
+  * [更换内核相关](#更换内核相关)
   * [用户安装](#用户安装)
   * [使用方法](#使用方法)
   * [小内存机器（小于1G）建议设置](#小内存机器（小于1G）建议设置)
   * [萌咖大佬相关](#萌咖大佬相关)
 
 
-
+## 更换内核相关
 ## Debian/Unbuntu 自动更换内核 (必须，运行后需重启)
 ```
 bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/raw/master/Debian_Kernel.sh)
