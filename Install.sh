@@ -95,7 +95,6 @@ function Install()
   sed -i "s/^accif\=.*/accif\=\"$Eth\"/" "${AcceTmp}/etc/config"
   sed -i "s/^apxexe\=.*/apxexe\=\"\/appex\/bin\/$AcceBin\"/" "${AcceTmp}/etc/config"
   bash "${AcceRoot}/install.sh" -in 5000000 -out 5000000 -t 0 -r -b -i ${Eth}
-  mkdir /var/AppEx_Cache
   rm -rf /tmp/*lotServer* >/dev/null 2>&1
   Welcome;
   if [ -f /appex/bin/serverSpeeder.sh ]; then
