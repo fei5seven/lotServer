@@ -1,4 +1,5 @@
 # frok自萌咖（moeclub）大佬的lotServer
+#### 目前一直在调整参数，希望找到常规linux死机的原因。（aws gcp aliyun都不会死机，但linode digitalvm kagoya等常规vps都会概率死机）
 ### 支持系统看log文件
 
   * [更换内核相关](#更换内核相关)
