@@ -1,10 +1,11 @@
 # frok自萌咖（moeclub）大佬的lotServer
+#### 目前一直在调整参数，希望找到常规linux死机的原因。（aws gcp aliyun都不会死机，但linode digitalvm kagoya等常规vps都会概率死机）
 ### 支持系统看log文件
 
   * [更换内核相关](#更换内核相关)
   * [用户安装](#用户安装)
   * [使用方法](#使用方法)
-  * [小内存机器（小于1G）建议设置](#小内存机器（小于1G）建议设置)
+  * [小内存机器建议设置选项](#小内存机器建议设置选项)
   * [萌咖大佬相关](#萌咖大佬相关)
 
 
@@ -60,9 +61,9 @@ bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/r
 
 
 
-## 小内存机器（小于1G）建议设置
+## 小内存机器建议设置选项
 (示例：free memory低于120M时自动清理内存，相对dorp cache比较安全不容易死机）
-- (推荐)
+- (推荐，永久生效)
 
 ```
 sysctl -w vm.min_free_kbytes=120000
@@ -70,10 +71,9 @@ sysctl -p
 reboot
 ```
 或者
-- (不推荐，因为感觉似乎不怎么有用)
+- (不推荐，只在当前运行阶段生效)
 ```
 echo 120000 > /proc/sys/vm/min_free_kbytes
-reboot
 ```
 
 
