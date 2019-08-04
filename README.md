@@ -78,7 +78,7 @@ echo 120000 > /proc/sys/vm/min_free_kbytes
 ```
 
 ## linode白嫖20刀方法
-[注册我的refer链接,每人获得20刀，感谢点击]https://www.linode.com/?r=88190ba8ace938de1db8a94410586dfbe1a53e85
+[注册我的refer链接,每人获得20刀，感谢点击](https://www.linode.com/?r=88190ba8ace938de1db8a94410586dfbe1a53e85)
 注册时促销代码填写podcastinit2019 完成后可以立即获得20刀，免费用4个月。
 之后还想白嫖可以重装下系统换个IP清除浏览器cookie后再次使用。
 感谢您使用我的refer链接，谢谢谢谢！
