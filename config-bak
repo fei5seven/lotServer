@@ -1,0 +1,113 @@
+#!/bin/echo Warning: this is a library file, can not be execute directly:
+########################################################
+#                                                      #
+#             LotServer Configuration File             #
+#                                                      #
+########################################################
+
+# Format: config="value"
+# Note that spaces are not allowed before and after the equal sign
+
+#------------------------------------------------------#
+#     below config items take effect after reload      #
+#------------------------------------------------------#
+accif="eth0"
+lanif=""
+acc="1"
+advacc="1"
+advinacc="1"
+wankbps="1000000"
+waninkbps="1000000"
+csvmode="0"
+highcsv="0"
+subnetAcc="0"
+maxmode="1"
+maxTxMinSsThresh="1048575"
+maxTxEffectiveMS="0"
+maxAccFlowTxKbps="0"
+pcapEnable="0"
+bypassOverFlows="1"
+initialCwndWan="22"
+maxCwndWan=""
+l2wQLimit="256 2048"
+w2lQLimit="256 2048"
+shrinkPacket="1"
+retranWaitListMS="32"
+halfCwndMinSRtt="500"
+halfCwndLossRateShift="3"
+shaperEnable="0"
+tcpOnly="1"
+smBurstMS="16"
+smBurstMin="16000"
+smBurstTolerance="32768"
+flowShortTimeout="30000"
+nic_offload="0"
+rsc="1"
+gso="1"
+ultraBoostWin="0"
+minSsThresh="8 24"
+dbcRttThreshMS=""
+smMinKbps=""
+lanSegment=""
+lanSegmentV6=""
+txCongestObey="1"
+taskSchedDelay="100 100"
+configTimeout="30"
+tcpFlags="0x0"
+udptun=""
+synRetranMS="0"
+shrinkOSWmem="0"
+mpoolMaxCache="245600000"
+initialCwndLan="1024"
+lttMaxDelayMS="0 500"
+halfCwndLowLimit="65535"
+
+#------------------------------------------------------#
+#     below config items take effect after restart     #
+#------------------------------------------------------#
+engineNum="0"
+accppp="0"
+shortRttMS="0"
+packetWrapper="256"
+pmtu=""
+detectInterrupt="0"
+# byte cache
+byteCacheEnable="0"
+dataCompEnable="0"
+httpCompEnable="0"
+byteCacheMemory="250" #MB
+byteCacheDisk="" #MB
+diskDev="/var/AppEx_Cache"
+dropCache="0"
+
+# 0:not change, 1: on, 2: off
+txcsum="0" 
+rxcsum="0"
+
+#
+# IPv4 & IPv6
+#
+# only enable IPv4 or IPv6
+ipv4Only=0
+ipv6Only=0
+
+#ipHooks="0"
+#ipRxHookPri=""
+#ipTxHookPri=""
+#ipv6Hooks="0"
+#ipv6RxHookPri=""
+#ipv6TxHookPri=""
+
+#------------------------------------------------------#
+#         do not change the following configures       #
+#------------------------------------------------------#
+usermode=0
+licenseGen=0
+checkLicense=0
+accpath="/proc/net/appex"
+apxexe=""
+rttko="/appex/bin/{rttko}"
+apxlic="/appex/etc/apx.lic"
+
+email="usb@live.hk"
+installerID="fei5seven"
