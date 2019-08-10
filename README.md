@@ -71,7 +71,7 @@ vim /etc/rc.local
 ````
 在exit 0前添加
 ````
-sysctl -w vm.min_free_kbytes=50000
+sysctl -w vm.min_free_kbytes=100000
 sysctl -p
 reboot
 ````
