@@ -13,7 +13,7 @@
 ## 更换内核相关
 ### Debian/Unbuntu 自动更换内核 (必须，运行后需重启)
 ```
-bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/raw/master/Debian_Kernel.sh)
+bash <(wget --no-check-certificate -qO- wget https://git.io/Kernel.sh)
 ```
 
 
@@ -24,7 +24,7 @@ bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/r
 - 去查看锐速版本库发现有个内核版本很接近 2.6.32-573.1.1.el6.x86_64 .
 - 执行安装命令:
 ```
-wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh install '2.6.32-573.1.1.el6.x86_64'
+bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) install 2.6.32-573.1.1.el6.x86_64
 ```
 - 锐速安装脚本就会强制安装内核版本为 2.6.32-573.1.1.el6.x86_64 的锐速.
 - 安装命令中的 2.6.32-573.1.1.el6.x86_64 可自行更改.
@@ -38,17 +38,17 @@ wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVice
 ## 用户安装
 - 常规自动安装（推荐，自动检测内核）
 ```
-bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/raw/master/Install.sh) install
+bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) install
 ```
 
 - 指定内核安装
 ```
-bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/raw/master/Install.sh) install <Kernel Version>
+bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) install <Kernel Version>
 ```
 
 - 完全卸载
 ```
-bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/raw/master/Install.sh) uninstall
+bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) uninstall
 ```
 
 
