@@ -62,7 +62,7 @@ bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/r
 
 
 ## 优化相关
-- 小内存机器建议设置选项
+#### 小内存机器建议设置选项
 (示例：free memory低于120M时自动清理内存，相对dorp cache比较安全不容易死机）
 - (在exit 0前添加 推荐，永久生效)
 
@@ -77,21 +77,21 @@ reboot
 echo 120000 > /proc/sys/vm/min_free_kbytes
 ```
 
-- 检测并修改为hybla加速模块
-编辑 limits.conf
+#### 检测并修改为hybla加速模块
+- 编辑 limits.conf
 ````
 vi /etc/security/limits.conf
 ````
-增加以下两行
+- 增加以下两行
 ````
 * soft nofile 51200
 * hard nofile 51200
 ````
-开启 shadowsocks 服务之前，先设置一下 ulimit
+- 开启服务之前，先设置一下 ulimit
 ````
 ulimit -n 51200
 ````
-Linux 内核中提供了若干套 TCP 拥塞控制算法，这些算法各自适用于不同的环境。
+##### Linux 内核中提供了若干套 TCP 拥塞控制算法，这些算法各自适用于不同的环境。
 1 ） reno 是最基本的拥塞控制算法，也是 TCP 协议的实验原型。
 2 ） bic 适用于 rtt 较高但丢包极为罕见的情况，比如北美和欧洲之间的线路，这是 2.6.8 到 2.6.18 之间的 Linux 内核的默认算法。
 3 ） cubic 是修改版的 bic ，适用环境比 bic 广泛一点，它是 2.6.19 之后的 linux 内核的默认算法。
