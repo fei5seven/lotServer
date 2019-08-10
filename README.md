@@ -61,10 +61,10 @@ bash <(wget --no-check-certificate -qO- https://github.com/fei5seven/lotServer/r
 - 重新启动 /appex/bin/lotServer.sh restart
 
 
-
-## 小内存机器建议设置选项
+## 优化相关
+- 小内存机器建议设置选项
 (示例：free memory低于120M时自动清理内存，相对dorp cache比较安全不容易死机）
-- (推荐，永久生效)
+- (在exit 0前添加 推荐，永久生效)
 
 ```
 sysctl -w vm.min_free_kbytes=120000
@@ -77,6 +77,78 @@ reboot
 echo 120000 > /proc/sys/vm/min_free_kbytes
 ```
 
+- 检测并修改为hybla加速模块
+编辑 limits.conf
+````
+vi /etc/security/limits.conf
+````
+增加以下两行
+````
+* soft nofile 51200
+* hard nofile 51200
+````
+开启 shadowsocks 服务之前，先设置一下 ulimit
+````
+ulimit -n 51200
+````
+Linux 内核中提供了若干套 TCP 拥塞控制算法，这些算法各自适用于不同的环境。
+1 ） reno 是最基本的拥塞控制算法，也是 TCP 协议的实验原型。
+2 ） bic 适用于 rtt 较高但丢包极为罕见的情况，比如北美和欧洲之间的线路，这是 2.6.8 到 2.6.18 之间的 Linux 内核的默认算法。
+3 ） cubic 是修改版的 bic ，适用环境比 bic 广泛一点，它是 2.6.19 之后的 linux 内核的默认算法。
+4 ） hybla 适用于高延时、高丢包率的网络，比如卫星链路——同样适用于中美之间的链路。
+
+我们需要做的工作就是将 TCP 拥塞控制算法改为 hybla 算法，并且优化 TCP 参数。
+
+1 、查看可用的算法。
+主要看内核是否支持 hybla ，如果没有，只能用 cubic 了。（一般都支持）
+````
+sysctl net.ipv4.tcp_available_congestion_control
+````
+2 、如果没有该算法，则加载 hybla 算法（不支持 OpenVZ ）
+````
+/sbin/modprobe tcp_hybla
+````
+3 、首先做好备份工作，把 sysctl.conf 备份到 root 目录
+````
+cp /etc/sysctl.conf /root/
+````
+4 、修改 sysctl.conf 配置文件，优化 TCP 参数
+````
+vi /etc/sysctl.conf
+````
+添加以下代码
+````
+fs.file-max = 51200
+#提高整个系统的文件限制
+net.core.rmem_max = 67108864
+net.core.wmem_max = 67108864
+net.core.netdev_max_backlog = 250000
+net.core.somaxconn = 3240000
+ 
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 0
+net.ipv4.tcp_fin_timeout = 30
+net.ipv4.tcp_keepalive_time = 1200
+net.ipv4.ip_local_port_range = 10000 65000
+net.ipv4.tcp_max_syn_backlog = 8192
+net.ipv4.tcp_max_tw_buckets = 5000
+#如果linux内核没到3.10，这个fastopen请注释掉
+net.ipv4.tcp_fastopen = 3
+net.ipv4.tcp_rmem = 4096 87380 67108864
+net.ipv4.tcp_wmem = 4096 65536 67108864
+net.ipv4.tcp_mtu_probing = 1
+net.ipv4.tcp_congestion_control = hybla
+````
+5 、保存生效
+````
+sysctl -p
+````
+6 、添加开机加载（在exit 0前添加）
+````
+vim /etc/rc.local
+/sbin/modprobe tcp_hybla
+````
 ## linode白嫖20刀方法
 - [注册我的refer链接,每人获得20刀，感谢点击](https://www.linode.com/?r=88190ba8ace938de1db8a94410586dfbe1a53e85)
 - 注册时促销代码填写podcastinit2019 完成后可以立即获得20刀，免费用4个月。
