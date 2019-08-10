@@ -63,7 +63,7 @@ bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) uni
 
 ## 优化相关
 #### 小内存机器建议设置选项
-(示例：free memory低于120M时自动清理内存，相对dorp cache比较安全不容易死机）
+(示例：free memory低于100M时自动清理内存，相对dorp cache比较安全不容易死机）
 - (在exit 0前添加 推荐，永久生效)
 
 ```
@@ -71,7 +71,7 @@ vim /etc/rc.local
 ````
 在exit 0前添加
 ````
-sysctl -w vm.min_free_kbytes=120000
+sysctl -w vm.min_free_kbytes=50000
 sysctl -p
 reboot
 ````
