@@ -80,7 +80,7 @@ sysctl -p
 ## 萌咖大佬相关
 
 ## 许可证生成 -->[萌咖 API接口](https://moeclub.org/api)  
-- 如果无法生成许可证,可能API正在被无聊的人攻击.
+- 如果无法生成许可证,可能API正在被无聊的人攻击.~~（脚本内置的接口为我自己的接口，自己选择使用吧）~~
 
 ## [常见问答](https://github.com/MoeClub/lotServer/wiki)     
 
