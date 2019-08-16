@@ -62,24 +62,15 @@ bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) uni
 
 
 ## 优化相关
-#### 小内存机器建议设置选项
-(示例：free memory低于缺省值时自动清理内存，相对dorp cache比较安全不容易死机且稳定）
-- (在exit 0前添加 推荐，永久生效)
-
+#### 机器内存控制建议设置选项
+(示例：free memory低于60M自动清理内存，保证锐速加速所需内存还不至于进程互相打架）
 ```
 vim /etc/rc.local
 ````
-在exit 0前添加
+- 在exit 0前添加
 ````
-sysctl -w vm.min_free_kbytes=67584
+sysctl -w vm.min_free_kbytes=30000
 sysctl -p
-reboot
-````
-或者
-````
-echo 67584 > /proc/sys/vm/min_free_kbytes
-sysctl -p
-reboot
 ````
 
 #### 检测并修改为hybla加速模块
