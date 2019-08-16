@@ -4,22 +4,20 @@
 #### 内存低于512M不建议使用，一定会死机
 ### 支持系统看log文件
 ***
+***
   * [更换内核相关](#更换内核相关)
   * [用户安装](#用户安装)
   * [使用方法](#使用方法)
   * [优化内存相关](#优化内存相关)
    * [linode白嫖20刀方法](#linode白嫖20刀方法)
   * [萌咖大佬相关](#萌咖大佬相关)
-
-
+***
+***
 ## 更换内核相关
 ### Debian/Unbuntu 自动更换内核 (必须，运行后需重启)
 ```
 bash <(wget --no-check-certificate -qO- wget https://git.io/Kernel.sh)
 ```
-
-
-
 ### CentOS用户如遇内核不能匹配, 请参照以下示例
 - 使用锐速安装脚本,得知不能匹配到内核.
 - 通过 uname -r 查看到的版本号为 2.6.32-642.el6.x86_64 ,
@@ -34,9 +32,8 @@ bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) ins
 - 如果启动成功，恭喜你!
 - 如果启动失败，请重复 2-5 步骤!
 - 不要害怕失败,安装失败并不会影响系统运行.
-
-
-
+***
+***
 ## 用户安装
 - 常规自动安装（推荐，自动检测内核）
 ```
@@ -52,17 +49,15 @@ bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) ins
 ```
 bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) uninstall
 ```
-
-
-
-
+***
+***
 ## 使用方法
 - 启动命令 /appex/bin/lotServer.sh start
 - 停止加速 /appex/bin/lotServer.sh stop
 - 状态查询 /appex/bin/lotServer.sh status
 - 重新启动 /appex/bin/lotServer.sh restart
-
-
+***
+***
 ## 优化相关
 #### 机器内存控制建议设置选项
 (示例：free memory低于60M自动清理内存，保证锐速加速所需内存还不至于进程互相打架）
@@ -75,12 +70,12 @@ sysctl -w vm.min_free_kbytes=30000
 sysctl -p
 ````
 
-#### 检测并修改为hybla加速模块
+~~检测并修改为hybla加速模块
 - 编辑 limits.conf
 ````
 vi /etc/security/limits.conf
 ````
-- 增加以下两行
+~~- 增加以下两行
 ````
 * soft nofile 51200
 * hard nofile 51200
@@ -89,16 +84,16 @@ vi /etc/security/limits.conf
 ````
 ulimit -n 51200
 ````
-##### 启用hybla算法（可选）
+~~启用hybla算法（可选）
 Linux 内核中提供了若干套 TCP 拥塞控制算法，这些算法各自适用于不同的环境。
 1 ） reno 是最基本的拥塞控制算法，也是 TCP 协议的实验原型。
 2 ） bic 适用于 rtt 较高但丢包极为罕见的情况，比如北美和欧洲之间的线路，这是 2.6.8 到 2.6.18 之间的 Linux 内核的默认算法。
 3 ） cubic 是修改版的 bic ，适用环境比 bic 广泛一点，它是 2.6.19 之后的 linux 内核的默认算法。
 4 ） hybla 适用于高延时、高丢包率的网络，比如卫星链路——同样适用于中美之间的链路。
 
-我们需要做的工作就是将 TCP 拥塞控制算法改为 hybla 算法，并且优化 TCP 参数。
+~~我们需要做的工作就是将 TCP 拥塞控制算法改为 hybla 算法，并且优化 TCP 参数。
 
-1 、查看可用的算法。
+~~1 、查看可用的算法。
 主要看内核是否支持 hybla ，如果没有，只能用 cubic 了。（一般都支持）
 ````
 sysctl net.ipv4.tcp_available_congestion_control
@@ -139,15 +134,17 @@ net.ipv4.tcp_wmem = 4096 65536 67108864
 net.ipv4.tcp_mtu_probing = 1
 net.ipv4.tcp_congestion_control = hybla
 ````
-5 、保存生效
+~~5 、保存生效
 ````
 sysctl -p
 ````
-6 、添加开机加载（在exit 0前添加）
+6 、添加开机加载（在exit 0前添加）~~
 ````
 vim /etc/rc.local
 /sbin/modprobe tcp_hybla
 ````
+***
+***
 ## linode白嫖20刀方法
 - [注册我的refer链接,每人获得20刀，感谢点击](https://www.linode.com/?r=88190ba8ace938de1db8a94410586dfbe1a53e85)
 - 注册时促销代码填写podcastinit2019 完成后可以立即获得20刀，免费用4个月。
