@@ -58,7 +58,7 @@ bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) uni
 - 重新启动 /appex/bin/lotServer.sh restart
 ***
 ***
-## 优化相关
+## 优化内存相关
 #### 机器内存控制建议设置选项
 (示例：free memory低于60M自动清理内存，保证锐速加速所需内存还不至于进程互相打架）
 ```
