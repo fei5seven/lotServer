@@ -73,9 +73,9 @@ packetWrapper="256"
 pmtu=""
 detectInterrupt="0"
 # byte cache
-byteCacheEnable="1"
+byteCacheEnable="0"
 dataCompEnable="0"
-httpCompEnable="1"
+httpCompEnable="0"
 byteCacheMemory="50" #MB
 byteCacheDisk="500" #MB
 diskDev="/var/AppEx_Cache"
