@@ -69,6 +69,25 @@ vim /etc/rc.local
 sysctl -w vm.min_free_kbytes=30000
 sysctl -p
 ````
+#### 增加swap分区空间
+(针对特殊实例如kagoya等没有设置swap分区的IDC,示例为增加1G空间，实际需求与内存对等即可)
+设置swap分区为1G
+````
+dd if=/dev/zero of=/home/swap bs=1024 count=1024000
+````
+更改swap分区
+````
+/sbin/mkswap /home/swap
+````
+激活swap分区
+````
+/sbin/swapon /home/swap
+````
+以上修改重启就会丢失，修改swap分区永久有效方法
+````
+vim /etc/fstab
+/home/swap swap swap defaults 0 0
+````
 ***
 ***
 ## linode白嫖20刀方法
