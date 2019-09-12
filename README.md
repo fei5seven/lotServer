@@ -86,6 +86,9 @@ dd if=/dev/zero of=/home/swap bs=1024 count=1024000
 以上修改重启就会丢失，修改swap分区永久有效方法
 ````
 vim /etc/fstab
+````
+增加如下一行
+````
 /home/swap swap swap defaults 0 0
 ````
 ***
