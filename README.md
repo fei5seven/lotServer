@@ -95,7 +95,7 @@ vim /etc/fstab
 ***
 ***
 ## 重装系统相关
-- 默认密码root密码为fei5seven
+- 默认密码root密码为fei5seven(安装后只有系统和基本软件，其他软件都没有）
 Debian/Ubuntu:
 ````
 apt-get update
@@ -139,7 +139,26 @@ bash InstallNET.sh      -d/--debian [dist-name]
 - dist-version: 发行版本号
 - -apt/-yum/--mirror : 使用定义镜像
 - -a/-m : 询问是否能进入VNC自行操作. -a 为不提示(一般用于全自动安装), -m 为提示.
-
+### 安装中文语言包
+- 安装中文语言包
+````
+sudo apt-get install  language-pack-zh-han*
+````
+- 安装gnome包
+````
+sudo apt-get install   language-pack-gnome-zh-han*
+````
+- 安装kde包
+````
+sudo apt-get install   language-pack-kde-zh-han*
+````
+- 到这里就能够查看目录下面的中文字符了。
+- 最后运行语言支持检查
+````
+sudo apt install $(check-language-support)
+````
+***
+***
 ## linode白嫖20刀方法
 - [注册我的refer链接,每人获得20刀，感谢点击](https://www.linode.com/?r=88190ba8ace938de1db8a94410586dfbe1a53e85)
 - 注册时促销代码填写podcastinit2019 完成后可以立即获得20刀，免费用4个月。
