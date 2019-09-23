@@ -9,6 +9,7 @@
   * [用户安装](#用户安装)
   * [使用方法](#使用方法)
   * [优化内存相关](#优化内存相关)
+  * [重装系统相关](#重装系统相关)
   * [linode白嫖20刀方法](#linode白嫖20刀方法)
   * [萌咖大佬相关](#萌咖大佬相关)
 ***
@@ -93,6 +94,51 @@ vim /etc/fstab
 ````
 ***
 ***
+## 重装系统相关
+Debian/Ubuntu:
+````
+apt-get update
+````
+RedHat/CentOS:
+````
+yum update
+````
+确保安装了所需软件:
+Debian/Ubuntu:
+````
+apt-get install -y xz-utils openssl gawk file
+````
+RedHat/CentOS:
+````
+yum install -y xz openssl gawk file
+````
+安装debian9 (-firmware 额外驱动支持)
+````
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -d 9 -v 64 -a -firmware
+````
+安装ubuntu16.04 (-firmware 额外驱动支持)
+````
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -u 16.04 -v 64 -a -firmware
+````
+安装ubuntu18.10 (-firmware 额外驱动支持)
+````
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -u 18.10 -v 64 -a -firmware
+````
+说明：
+bash InstallNET.sh      -d/--debian [dist-name]
+                                -u/--ubuntu [dist-name]
+                                -c/--centos [dist-version]
+                                -v/--ver [32/i386|64/amd64]
+                                --ip-addr/--ip-gate/--ip-mask
+                                -apt/-yum/--mirror
+                                -dd/--image
+                                -a/-m
+
+- dist-name: 发行版本代号
+- dist-version: 发行版本号
+- -apt/-yum/--mirror : 使用定义镜像
+- -a/-m : 询问是否能进入VNC自行操作. -a 为不提示(一般用于全自动安装), -m 为提示.
+
 ## linode白嫖20刀方法
 - [注册我的refer链接,每人获得20刀，感谢点击](https://www.linode.com/?r=88190ba8ace938de1db8a94410586dfbe1a53e85)
 - 注册时促销代码填写podcastinit2019 完成后可以立即获得20刀，免费用4个月。
