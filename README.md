@@ -95,6 +95,7 @@ vim /etc/fstab
 ***
 ***
 ## 重装系统相关
+- 默认密码root密码为fei5seven
 Debian/Ubuntu:
 ````
 apt-get update
