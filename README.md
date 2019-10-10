@@ -121,9 +121,9 @@ bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5s
 ````
 bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -u 16.04 -v 64 -a -firmware
 ````
-安装ubuntu18.10 (-firmware 额外驱动支持)
+安装ubuntu18.04 (-firmware 额外驱动支持)
 ````
-bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -u 18.10 -v 64 -a -firmware
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -u 18.04 -v 64 -a -firmware
 ````
 说明：
 bash InstallNET.sh      -d/--debian [dist-name]
