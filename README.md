@@ -157,6 +157,11 @@ sudo apt-get install   language-pack-kde-zh-han*
 ````
 sudo apt install $(check-language-support)
 ````
+### ssh登陆显示详细信息
+````
+sudo apt-get install landscape-common
+sudo apt-get install update-notifier-common
+````
 ***
 ***
 ## linode白嫖20刀方法
