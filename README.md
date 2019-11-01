@@ -68,6 +68,7 @@ vim /etc/rc.local
 - 在exit 0前添加
 ````
 sysctl -w vm.min_free_kbytes=30000
+sysctl -w vm.panic_on_oom=1
 sysctl -p
 ````
 #### 增加swap分区空间
