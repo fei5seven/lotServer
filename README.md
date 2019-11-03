@@ -61,6 +61,7 @@ bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) uni
 ***
 ## 优化内存相关
 #### 机器内存控制建议设置选项
+设置内存低于阈值清理内存，数值不建议过高，并关闭oom自动杀进程功能方式锐速多次启动导致宕机。
 (示例：free memory低于60M自动清理内存，保证锐速加速所需内存还不至于进程互相打架）
 ```
 vim /etc/rc.local
