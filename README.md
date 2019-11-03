@@ -35,7 +35,8 @@ bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) ins
  不要害怕失败,安装失败并不会影响系统运行.
 ***
 ***
-## 用户安装 ~~（脚本内置许可证的接口为我自己的接口了，有效期9999年那种 笑）~~
+## 用户安装  
+ ~~（脚本内置许可证的接口为我自己的接口了，有效期9999年那种 笑）~~
  > 常规自动安装（推荐，自动检测内核）
 ```
 bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) install
