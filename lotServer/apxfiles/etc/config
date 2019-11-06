@@ -73,11 +73,11 @@ packetWrapper="256"
 pmtu=""
 detectInterrupt="0"
 # byte cache
-byteCacheEnable="1"
+byteCacheEnable="0"
 dataCompEnable="0"
 httpCompEnable="1"
 byteCacheMemory="250" #MB
-byteCacheDisk="250" #MB
+byteCacheDisk="" #MB
 diskDev="/var/AppEx_Cache"
 
 # 0:not change, 1: on, 2: off
