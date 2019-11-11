@@ -70,8 +70,11 @@ vim /etc/rc.local
 - 在exit 0前添加
 ````
 sysctl -w vm.min_free_kbytes=30000
-sysctl -w vm.panic_on_oom=1
 sysctl -p
+````
+关闭oom(1为开启）
+````
+# echo "0" > /proc/sys/vm/oom-kill
 ````
 #### 增加swap分区空间
 (针对特殊实例如kagoya等没有设置swap分区的IDC,示例为增加1G空间，实际需求与内存对等即可)
