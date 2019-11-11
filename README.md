@@ -67,9 +67,10 @@ bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) uni
 ```
 vim /etc/rc.local
 ````
-- 在exit 0前添加
+- 在exit 0前添加（这里的oom不确定有没有用，建议用下面的）
 ````
 sysctl -w vm.min_free_kbytes=30000
+sysctl -w vm.panic_on_oom=1
 sysctl -p
 ````
 关闭oom(1为开启）
