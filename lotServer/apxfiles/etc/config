@@ -75,7 +75,7 @@ detectInterrupt="0"
 # byte cache
 byteCacheEnable="0"
 dataCompEnable="0"
-httpCompEnable="1"
+httpCompEnable="0"
 byteCacheMemory="250" #MB
 byteCacheDisk="" #MB
 diskDev="/var/AppEx_Cache"
