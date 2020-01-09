@@ -9,6 +9,7 @@
   * [用户安装](#用户安装)
   * [使用方法](#使用方法)
   * [优化内存相关](#优化内存相关)
+  * [控制锐速CPU峰值防止死机](#控制锐速CPU峰值防止死机)
   * [重装系统相关](#重装系统相关)
   * [linode白嫖20刀方法](#linode白嫖20刀方法)
   * [萌咖大佬相关](#萌咖大佬相关)
@@ -99,6 +100,17 @@ vim /etc/fstab
 ````
 /home/swap swap swap defaults 0 0
 ````
+***
+***
+#控制锐速CPU峰值防止死机
+安装必须软件
+```
+apt-get install cpulimit
+```
+配置锐速限制示例(这里Ubuntu_18.04_4.15.0-30-generic自行替换对应版本）
+```
+nohup cpulimit -e /appex/bin/acce-3.11.36.2-[Ubuntu_18.04_4.15.0-30-generic] -l 50 m>> /dev/null 2>&1 &
+```
 ***
 ***
 ## 重装系统相关
