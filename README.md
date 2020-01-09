@@ -102,7 +102,7 @@ vim /etc/fstab
 ````
 ***
 ***
-##控制锐速CPU峰值防止死机
+## 控制锐速CPU峰值防止死机
 安装必须软件
 ```
 apt-get install cpulimit
