@@ -2,7 +2,6 @@
 ~~目前一直在调整参数，希望找到常规linux死机的原因。（aws gcp aliyun都不会死机，但linode digitalvm kagoya等常规vps都会概率死机）  
 基本找到死机原因了，是ss或者v2进程与内存自动清理程序ksoftirqd/0 互殴导致CPU占满被母鸡关机了，解决方法看优化内存相关）~~  
  - 内存低于512M不建议使用，一定会死机  
- - 支持系统看log文件
 ***
 ***
   * [更换内核相关](#更换内核相关)
@@ -107,7 +106,7 @@ vim /etc/fstab
 ```
 apt-get install cpulimit
 ```
-配置锐速限制示例(这里Ubuntu_18.04_4.15.0-30-generic自行替换对应版本）
+配置锐速限制示例(这里Ubuntu_18.04_4.15.0-30-generic自行替换对应版本） 懒得写脚本，每次开机必须重新配置
 ```
 nohup cpulimit -e /appex/bin/acce-3.11.36.2-[Ubuntu_18.04_4.15.0-30-generic] -l 50 m>> /dev/null 2>&1 &
 ```
