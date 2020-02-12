@@ -79,6 +79,7 @@ httpCompEnable="1"
 byteCacheMemory="250" #MB
 byteCacheDisk="" #MB
 diskDev="/var/AppEx_Cache"
+dropCache="3"
 
 # 0:not change, 1: on, 2: off
 txcsum="0" 
