@@ -107,10 +107,9 @@ vim /etc/fstab
 ```
 apt-get install cpulimit
 ```
-配置锐速限制示例(这里Ubuntu_18.04_4.15.0-30-generic自行替换对应版本） 懒得写脚本，每次开机必须重新配置
-```
-nohup cpulimit -e /appex/bin/acce-3.11.36.2-[Ubuntu_18.04_4.15.0-30-generic] -l 50 m>> /dev/null 2>&1 &
-```
+~~配置锐速限制示例(这里Ubuntu_18.04_4.15.0-30-generic自行替换对应版本） 懒得写脚本，每次开机必须重新配置~~  
+临时性的写了一个脚本(cpulimit文件夹里），但还是抑制不了死机，继续自己测试。脚本自己设置开机启动吧.
+
 ***
 ***
 ## 重装系统相关
