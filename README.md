@@ -1,7 +1,7 @@
 # frok自萌咖（moeclub）大佬的lotServer
 ~~目前一直在调整参数，希望找到常规linux死机的原因。（aws gcp aliyun都不会死机，但linode digitalvm kagoya等常规vps都会概率死机）  
 基本找到死机原因了，是ss或者v2进程与内存自动清理程序ksoftirqd/0 互殴导致CPU占满被母鸡关机了，解决方法看优化内存相关）~~  
- - 新增一个控制CPU防止死机的方法，请确定锐速启动后再进行限制，不然可能会无效。
+ - 新增一个控制CPU防止ubuntu死机的方法，实际效果不佳，推荐使用centos安装3.11.36.2版本（gtmd ubuntu)  
  - 内存低于512M不建议使用，一定会死机  
 ***
 ***
