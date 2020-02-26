@@ -131,6 +131,10 @@ RedHat/CentOS:
 ````
 yum install -y xz openssl gawk file
 ````
+安装centos6.10 (-firmware 额外驱动支持)
+````
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -c 6.10 -v 64 -a -firmware
+```
 安装debian9 (-firmware 额外驱动支持)
 ````
 bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -d 9 -v 64 -a -firmware
@@ -156,7 +160,50 @@ bash InstallNET.sh      -d/--debian [dist-name]
 - dist-name: 发行版本代号
 - dist-version: 发行版本号
 - -apt/-yum/--mirror : 使用定义镜像
-- -a/-m : 询问是否能进入VNC自行操作. -a 为不提示(一般用于全自动安装), -m 为提示.
+- -a/-m : 询问是否能进入VNC自行操作. -a 为不提示(一般用于全自动安装), -m 为提示.  
+
+- centos6.10升级centos7  
+安装依赖列表
+yum源文件/etc/yum.repos.d/upgrade.repo，内容为
+```
+[upgrade]
+name=upgrade
+baseurl=http://dev.centos.org/centos/6/upg/x86_64/
+enabled=1
+gpgcheck=0
+```
+- 安装依赖包
+```
+yum install preupgrade-assistant-contents redhat-upgrade-tool preupgrade-assistant
+```
+- 校验升级  
+执行刚刚安装的命令
+preupg
+
+- 导入yum的GPG密钥
+```
+rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7
+```
+- 开始升级  
+执行升级命令
+```
+/usr/bin/redhat-upgrade-tool-cli --force --network 7 --instrepo=http://mirror.centos.org/centos/7/os/x86_64
+```
+
+可以换成阿里云的镜像，速度会快一些
+```
+/usr/bin/redhat-upgrade-tool-cli --force --network 7 --instrepo=http://mirrors.aliyun.com/centos/7/os/x86_64/
+```
+如果遇到报错
+Error: database disk image is malformed
+清除缓存，再次重试
+```
+yum clean dbcache
+```
+重启
+```
+reboot
+```
 ### 安装中文语言包
 - 安装中文语言包
 ````
