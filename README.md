@@ -134,7 +134,7 @@ yum install -y xz openssl gawk file
 安装centos6.10 (-firmware 额外驱动支持)
 ````
 bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -c 6.10 -v 64 -a -firmware
-```
+````
 安装debian9 (-firmware 额外驱动支持)
 ````
 bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/fei5seven/lotServer/master/InstallNET/InstallNET.sh') -d 9 -v 64 -a -firmware
