@@ -49,19 +49,10 @@ fi
 
 apt-get update
 apt-get install --no-install-recommends -y linux-image-${item}
-while true; do
   List_Kernel="$(dpkg -l |grep 'linux-image\|linux-modules\|linux-generic\|linux-headers' |grep -v "$item")"
   Num_Kernel="$(echo "$List_Kernel" |sed '/^$/d' |wc -l)"
   [ "$Num_Kernel" -eq "0" ] && break
   for kernel in `echo "$List_Kernel" |awk '{print $2}'`
-    do
-      if [ -f "/var/lib/dpkg/info/${kernel}.prerm" ]; then
-        sed -i 's/linux-check-removal/#linux-check-removal/' "/var/lib/dpkg/info/${kernel}.prerm"
-        sed -i 's/uname -r/echo purge/' "/var/lib/dpkg/info/${kernel}.prerm"
-      fi
-      dpkg --force-depends --purge "$kernel"
-    done
-  done
 apt-get autoremove -y
 [ -d '/var/lib/apt/lists' ] && find /var/lib/apt/lists -type f -delete
 
