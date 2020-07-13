@@ -25,7 +25,7 @@ elif [ "$deb_relese" == 'debian' ]; then
   elif [ "$deb_ver" == "8" ]; then
     item="3.16.0-4-${os_ver}" && ver='jessie' && url='archive.debian.org' && urls='deb.debian.org'
   elif [ "$deb_ver" == "9" ]; then
-    item="4.9.0-4-${os_ver}" && ver='stretch' && url='mirrors.163.com' && urls='mirrors.163.com'
+    item="4.9.0-4-${os_ver}" && ver='stretch' && url='deb.debian.org' && urls='deb.debian.org'
   else
     exit 1
   fi
