@@ -89,7 +89,7 @@ function Install()
   wget --no-check-certificate -qO "/tmp/lotServer.tar" "https://github.com/fei5seven/lotServer/raw/master/lotServer.tar"
   tar -xvf "/tmp/lotServer.tar" -C /tmp
   acce_ver=$(acce_check ${KNV})
-  # 如果有自己搭建的或者api失效，这里修改成你自己的api
+  # 如果有自己搭建的或者api失效，这里修改成你自己的api即可
   wget --no-check-certificate -qO "${AcceTmp}/etc/apx.lic" "https://apx.irsb.xyz/keygen.php?ver=${acce_ver}&mac=${Mac}"
   [ "$(du -b ${AcceTmp}/etc/apx.lic |cut -f1)" -lt '152' ] && Uninstall "Error! I can not generate the Lic for you, Please try again later. "
   echo "Lic generate success! "
