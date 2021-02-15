@@ -26,7 +26,7 @@ bash <(wget --no-check-certificate -qO- wget https://git.io/Kernel.sh)
  去查看锐速版本库发现有个内核版本很接近 2.6.32-573.1.1.el6.x86_64 .  
  执行安装命令:  
 ```
-bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) install 2.6.32-573.1.1.el6.x86_64
+bash <(wget --no-check-certificate -qO-  https://git.io/lotServerInstall.sh) install 3.10.0-957.el7.x86_64
 ```
  > 锐速安装脚本就会强制安装内核版本为 2.6.32-573.1.1.el6.x86_64 的锐速.  
  安装命令中的 2.6.32-573.1.1.el6.x86_64 可自行更改.  
