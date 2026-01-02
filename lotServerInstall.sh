@@ -6,7 +6,7 @@ clear
 echo -n "                      Local Time :   " && date "+%F [%T]       ";
 echo "            ======================================================";
 echo "            |                      lotServer                     |";
-echo "            |                                     for Linux      |";
+echo "            |   CSDN NMSL                         for Linux      |";
 echo "            |----------------------------------------------------|";
 echo "            |                                   --By fei5seven   |";
 echo "            ======================================================";
